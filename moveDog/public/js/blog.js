@@ -15,13 +15,21 @@ const setupBlog = (data) => {
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
+    const cityName = document.querySelector('.cityContext');
+    const airlineName = document.querySelector('.airlineContext');
+    const recruitName = document.querySelector('.recruitContext');
+
     
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
+    cityName.innerHTML += data.city;
+    airlineName.innerHTML += data.airline;
+    recruitName.innerHTML += data.recruit;
 
     const article = document.querySelector('.article');
+
     addArticle(article, data.article);
 }
 
