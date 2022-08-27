@@ -17,6 +17,7 @@ const setupBlog = (data) => {
     const publish = document.querySelector('.published');
     const cityName = document.querySelector('.cityContext');
     const airlineName = document.querySelector('.airlineContext');
+    const addressName = document.querySelector('.addressContext');
     const recruitName = document.querySelector('.recruitContext');
 
     
@@ -26,6 +27,7 @@ const setupBlog = (data) => {
     publish.innerHTML += data.publishedAt;
     cityName.innerHTML += data.city;
     airlineName.innerHTML += data.airline;
+    addressName.innerHTML += data.address;
     recruitName.innerHTML += data.recruit;
 
     const article = document.querySelector('.article');

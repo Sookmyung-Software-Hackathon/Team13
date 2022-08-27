@@ -67,7 +67,7 @@ publishBtn.addEventListener('click', () => {
         let date = new Date(); // for published at info
 
         //access firstore with db variable;
-        db.collection("blogs").doc(docName).set({
+        db.collection("volunteers").doc(docName).set({
             title: blogTitleField.value,
             city: cityField.value,
             airline: airlineField.value,
