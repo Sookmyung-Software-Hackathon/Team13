@@ -12,11 +12,35 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
 </head>
 <body>
-	<a href="javascript:kakaoLogin();"><img src="img/kakao_login.png" style="margin-top: 60px;" ></a>
+	 <nav class="navbar">
+        <a href="/"><img src="img/logo.png" class="logo" alt=""></a>
+        <ul class="links-container">
+            <li class="link-item"><a href="/" class="link">home</a></li>
+            <li class="link-item"><a href="list.html" class="link">dog list</a></li>
+            <li class="link-item"><a href="volList.html" class="link">Vol list</a></li>
+        </ul>
+    </nav>
+	<header class="header">
+        <div class="content">
+          <h1 class="heading">
+            <span class="small">Your trip can</span>
+            presents 
+            <span class="no-fill">new life</span>
+			<span class="small1"style="margin-top: 60px;">간편하게 로그인하고</span>
+			<span class="small1">서비스를 이용해보세요.</span>
+          </h1>
+        
+
+	<!-- 카카오로그인 -->
+			<a href="javascript:kakaoLogin();"><img src="img/kakao_login.png" ></a>
+		</div>
+      </header>
+
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         window.Kakao.init("57f1e334f5b7b896651a28c3e36cefcc");
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
+		response.id == mull;
 	function kakaoLogin() {
 		Kakao.Auth.login({
 			success: function (response) {
@@ -34,6 +58,16 @@
 						sessionStorage.setItem("kinds","kakao"); 
 						
 						console.log(response);
+
+						if (response.id === null) {
+							alert("로그인 실패") 
+						}
+
+						else {
+							alert("로그인 성공") 
+							window.location.href = "home1.html";
+							response.id == mull;
+						}
 					},
 					fail: function (error) {
 						console.log(error)

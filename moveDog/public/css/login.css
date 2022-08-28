@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.navbar{
+    width: 100%;
+    height: 60pz;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    background: #fff;
+    z-index: 9;
+}
+
+.links-container{
+    display:flex;
+    list-style: none;
+}
+
+.link{
+    padding: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.header{
+    margin-top: 150px;
+    /* margin-bottom: 100px; */
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.content{
+    text-align: center;
+}
+
+.heading{
+    font-style: italic;
+    color: rgb(95, 221, 64);
+    text-transform: capitalize;
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 150px;
+}
+
+.heading .small{
+    font-style: italic;
+    color : rgb(95, 221, 64);
+    display: block;
+    font-size: 30px;
+}
+
+.heading .small1{
+    font-family: AppleSDGothicNeo-Regular, 'Malgun Gothic''맑은 고딕', dotum, '돋움', sans-serif;
+    font-style: normal;
+    color : #57735e;
+    display: block;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.heading .no-fill{
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(113, 255, 78);
+}
