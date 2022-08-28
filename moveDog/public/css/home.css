@@ -35,11 +35,15 @@ body{
 
 .link{
     padding: 10px;
-    margin-left: 60px
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
 }
 
 .header{
     margin-top: 60px;
+    margin-bottom: 100px;
     width: 100%;
     height: calc(100vh - 60px);
     background: url(../img/header.jpg);
@@ -54,7 +58,8 @@ body{
 }
 
 .heading{
-    color: rgb(113, 255, 78);
+    font-style: italic;
+    color: rgb(95, 221, 64);
     text-transform: capitalize;
     font-size: 80px;
     line-height: 60px;
@@ -62,6 +67,8 @@ body{
 }
 
 .heading .small{
+    font-style: italic;
+    color : rgb(95, 221, 64);
     display: block;
     font-size: 40px;
 }
