@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moveDog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+</head>
+<body>
+	<a href="javascript:kakaoLogin();"><img src="img/kakao_login.png" style="margin-top: 60px;" ></a>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        window.Kakao.init("57f1e334f5b7b896651a28c3e36cefcc");
+        console.log(Kakao.isInitialized()); // sdk초기화여부판단
+	function kakaoLogin() {
+		Kakao.Auth.login({
+			success: function (response) {
+				Kakao.API.request({
+					url: '/v2/user/me',
+					success: function (response) {
+						// 유저 아이디, 이메일 주소, 이름을 Session에 저장
+						sessionStorage.setItem("user_info", response.id);
+						sessionStorage.setItem("kakao_nickname", response.kakao_account.profile.nickname);
+						sessionStorage.setItem("kakao_birthday", response.kakao_account.birthday);
+						sessionStorage.setItem("kakao_email", response.kakao_account.email);
+						sessionStorage.setItem("kakao_gender", response.kakao_account.gender);
+						
+						// 네이버 로그인과 카카오 로그인을 구분하기 위해 별도의 세션을 저장
+						sessionStorage.setItem("kinds","kakao"); 
+						
+						console.log(response);
+					},
+					fail: function (error) {
+						console.log(error)
+					},
+				})
+			},
+			fail: function (error) {
+				console.log(error)
+			},
+		})
+	}
+    </script>
+</body>
+</html>
