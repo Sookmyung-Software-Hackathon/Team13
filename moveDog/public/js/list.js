@@ -17,7 +17,6 @@ const createBlog = (blog) => {
         <br>
         <a class="btn dark">${data.city}</a>
         <a class="btn dark">${data.airline}</a>
-        <a class="btn dark">${data.address}</a>
         <a class="btn dark">${data.recruit}</a>
 
         <a href="/${blog.id}" class="btn dark">read</a>
